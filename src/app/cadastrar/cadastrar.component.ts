@@ -19,7 +19,7 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService, //injeção de dependencia: o modulo de cadastrar depende do authService para fazer o cadastro.
-    private router: Router
+    private router: Router //essa injeção de dependencia para rota interna direciona o usuario de cadastro para entrar.
     ) { }
   
 
