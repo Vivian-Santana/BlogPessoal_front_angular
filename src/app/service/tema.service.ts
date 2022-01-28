@@ -16,23 +16,23 @@ export class TemaService {
   }
 
   getAllTema(): Observable<Tema[]>{  //[] arrray por que são vários temas
-    return this.http.get<Tema[]>('http://localhost:8080/tema', this.token)
+    return this.http.get<Tema[]>('https://bloggenvivi.herokuapp.com/tema', this.token)
   }
 
   getByIdTema(id: number): Observable<Tema>{
-  return this.http.get<Tema>(`http://localhost:8080/tema/${id}`,this.token)
+  return this.http.get<Tema>(`https://bloggenvivi.herokuapp.com/tema/${id}`,this.token)
   }
 
   postTema(tema: Tema): Observable<Tema>{//tema único (sem []) nesse caso (post) porque vai postar um tema por vez.
-    return this.http.post<Tema>('http://localhost:8080/tema', tema, this.token)
-  }//no typescript quando apertar em publicar o obj tema é mandado pra cá e ele é registrado nesse endpoint http://localhost:8080/tema.
+    return this.http.post<Tema>('https://bloggenvivi.herokuapp.com/tema', tema, this.token)
+  }//no typescript quando apertar em publicar o obj tema é mandado pra cá e ele é registrado nesse endpoint https://bloggenvivi.herokuapp.com/tema.
 
   //tema service:
   putTema(tema: Tema): Observable<Tema>{
-    return this.http.put<Tema>('http://localhost:8080/tema', tema, this. token)
+    return this.http.put<Tema>('https://bloggenvivi.herokuapp.com/tema', tema, this. token)
   }
 
   deleteTema(id:number){
-    return this.http.delete(`http://localhost:8080/tema/${id}`, this.token) // delete passa o parametro pela rota.
+    return this.http.delete(`https://bloggenvivi.herokuapp.com/tema/${id}`, this.token) // delete passa o parametro pela rota.
   }
 }
