@@ -32,9 +32,6 @@ export class UserEditComponent implements OnInit {
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
   }
-  findByIdUser(idUser: number) {
-    throw new Error('Method not implemented.');
-  }
 
   confirmSenha(event: any) {     //método de confirmação de senha, recebendo um evento do tipo any
     this.confirmarSenha = event.target.value  //pega o que estiver no valor do input e coloca para o confirmar senha
@@ -53,19 +50,20 @@ export class UserEditComponent implements OnInit {
         this.user = resp
         this.router.navigate(['/inicio'])
         alert('Usuário atualizado com sucesso! faça o login novamente.')
-        environment.token =  ''
+        environment.token = ''
         environment.nome = ''
-        environment.foto =''
+        environment.foto = ''
         environment.id = 0
 
         this.router.navigate(['/entrar'])
       })
     }
-
-    findByIdUser(id: number){
-      this.authService.getByIdUser(id).subscribe((resp: User) => {
-        this.user = resp
-      })
-    }
-
   }
+
+  findByIdUser(id: number) {
+    this.authService.getByIdUser(id).subscribe((resp: User) => {
+      this.user = resp
+    })
+  }
+
+}
