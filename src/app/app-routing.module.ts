@@ -8,7 +8,6 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { User } from './model/User';
 import { TemaComponent } from './tema/tema.component';
 
 /*Arrey de rotas */
@@ -25,7 +24,7 @@ const routes: Routes = [
   {path: 'tema-edit/:id', component: TemaEditComponent},//passando parametro por rota no angular.
   {path: 'tema-delete/:id', component: TemaDeleteComponent},
   {path: 'postagem-edit/:id', component: PostagemEditComponent},
-  {path: 'postagem-delete/id:', component: PostagemDeleteComponent},
+  {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
   {path: 'user-edit/:id', component: UserEditComponent}
 ];
 
