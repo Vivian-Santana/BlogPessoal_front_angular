@@ -21,8 +21,12 @@ export class AuthService {
     return this.http.post<User>('https://bloggenvivi.herokuapp.com/usuarios/cadastrar', user)
   }  
 
+  getByIdUser(id: number): Observable<User>{
+    return this.http.get<User>(`https://bloggenvivi.herokuapp.com/$(id)`)
+  }
+
   logado(){              //método logado
-    let ok = false      //variável booleana
+    let ok: boolean = false      //variável booleana
 
     if(environment.token != ''){
       ok = true

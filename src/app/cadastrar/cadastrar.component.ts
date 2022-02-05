@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 
@@ -19,7 +19,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService, //injeção de dependencia: o modulo de cadastrar depende do authService para fazer o cadastro.
-    private router: Router //essa injeção de dependencia para rota interna direciona o usuario de cadastro para entrar.
+    private router: Router, //essa injeção de dependencia para rota interna direciona o usuario de cadastro para entrar.
+    private alertas: AlertasService
     ) { }
   
 
@@ -38,12 +39,12 @@ export class CadastrarComponent implements OnInit {
     this.user.tipo = this.tipoUsuario
 
     if(this.user.senha != this.confirmarSenha){
-      alert('As senhas estão incorretas.')
+      this.alertas.showAlertSuccess('As senhas estão incorretas.')
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: User)=>{ 
         this.user = resp
         this.router.navigate(['/entrar'])
-        alert('Usuário cadastrado com sucesso!')
+        this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!')
       })  // this.authService.cadastrar pega os usuarios dos inputs nas ngModels e mandar p o servidor, o subscribe vai sobrescrever esses inputs q são objetos (e não json).
     }
 
