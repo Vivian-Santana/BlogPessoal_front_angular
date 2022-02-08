@@ -1,6 +1,6 @@
 import { environment } from './../../../environments/environment.prod';
 import { PostagemService } from './../../service/postagem.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import {ActivatedRoute,  Router} from '@angular/router';
 import { Postagem } from './../../model/Postagem';
 import { Component, OnInit } from '@angular/core';
 import { AlertasService } from 'src/app/service/alertas.service';
