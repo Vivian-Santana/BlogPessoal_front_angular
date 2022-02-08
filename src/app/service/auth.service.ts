@@ -19,7 +19,11 @@ export class AuthService {
   }
   cadastrar(user:User):Observable<User>{
     return this.http.post<User>('https://bloggenvivi.herokuapp.com/usuarios/cadastrar', user)
-  }  
+  } 
+  
+  atualizar(user: User): Observable<User> {
+    return this.http.put<User>('https://bloggenvivi.herokuapp.com/usuarios/atualizar', user)
+  }
 
   getByIdUser(id: number): Observable<User>{
     return this.http.get<User>(`https://bloggenvivi.herokuapp.com/$(id)`)
