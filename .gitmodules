@@ -1,0 +1,3 @@
+[submodule ".vscode/Projeto_Angular_blogPessoal.git"] 
+  path = .vscode/Projeto_Angular_blogPessoal.git
+  url = git://https://github.com/Vivian-Santana/Projeto_Angular_blogPessoal.git
