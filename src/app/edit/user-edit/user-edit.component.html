@@ -24,6 +24,11 @@
                     placeholder="Seu usuário">
             </div>
 
+            <!--<div class="form-group">
+                <label for="usuario">E-mail</label>
+                <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu email">
+            </div>!-->
+
             <div class="form-group">
                 <label for="foto">Link da foto</label>
                 <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="usuario"
@@ -32,7 +37,7 @@
 
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input (input)='confirmSenha($event)' class="form-control" type="password" name="usuario" id="usuario"
+                <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"
                     placeholder="Sua senha">
             </div>
 
@@ -59,5 +64,4 @@
 
         </div>
     </div>
-
 </div>
